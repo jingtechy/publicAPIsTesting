@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'jingtechy.public.apis.automation'
+version '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'io.rest-assured:rest-assured:5.3.1'
+    testImplementation 'org.assertj:assertj-core:3.25.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1' 
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
