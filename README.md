@@ -4,6 +4,7 @@
 
 ### 1. Animals APIs
 - **Cat Facts** `https://cat-fact.herokuapp.com/facts/`
+- **Dog Breeds** `https://dog.ceo/api/breeds/list/all`
 
 
 ## Setup Instructions
