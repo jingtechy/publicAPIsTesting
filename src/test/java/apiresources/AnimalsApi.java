@@ -2,6 +2,7 @@ package apiresources;
 
 import io.restassured.response.Response;
 import models.animals.CatFacts;
+import models.animals.DogBreeds;
 
 import java.util.List;
 
@@ -25,6 +26,22 @@ public class AnimalsApi {
         List<CatFacts.CatFact> catFacts = response.jsonPath().getList("$", CatFacts.CatFact.class);
 
         return catFacts;
+    }
+
+    public static DogBreeds getDogBreeds() {
+        String endpoint = "https://dog.ceo/api/breeds/list/all";
+
+        DogBreeds dogBreeds = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(endpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .body()
+                .as(DogBreeds.class);
+
+        return dogBreeds;
     }
 }
 
