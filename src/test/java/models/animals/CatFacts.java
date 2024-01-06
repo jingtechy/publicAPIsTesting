@@ -3,7 +3,6 @@ package models.animals;
 import java.util.List;
 
 public class CatFacts {
-
     private List<CatFact> catFactList;
 
     public List<CatFact> getCatFactList() {
