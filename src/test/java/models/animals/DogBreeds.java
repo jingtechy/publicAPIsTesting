@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class DogBreeds {
-
     @JsonProperty("message")
     private Map<String, List<String>> message;
     private String status;
