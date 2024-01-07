@@ -6,6 +6,12 @@
 - **Cat Facts** `https://cat-fact.herokuapp.com/facts/`
 - **Dog Breeds** `https://dog.ceo/api/breeds/list/all`
 
+### 2. Barcodes APIs
+- **Barcode Lookup** `https://world.openfoodfacts.org/api/v0/product/737628064502.json`
+
+### 3. Books APIs
+- **Book** `https://openlibrary.org/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json`
+
 
 ## Setup Instructions
 1. Clone the repository: `git clone [repository_url]`
