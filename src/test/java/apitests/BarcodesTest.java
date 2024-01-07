@@ -1,7 +1,7 @@
 package apitests;
 
 import apiresources.BarcodesApi;
-import models.animals.BarcodeLookup;
+import models.barcodes.BarcodeLookup;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

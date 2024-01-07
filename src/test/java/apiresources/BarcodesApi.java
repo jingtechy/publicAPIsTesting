@@ -1,6 +1,6 @@
 package apiresources;
 
-import models.animals.BarcodeLookup;
+import models.barcodes.BarcodeLookup;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
