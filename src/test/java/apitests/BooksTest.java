@@ -24,6 +24,11 @@ public class BooksTest {
         assertThat(book.getLccnBook().getPreviewUrl().equals("https://archive.org/details/zenspeaksshoutso0000caiz")).isTrue();
         assertThat(book.getLccnBook().getThumbnailUrl().equals("https://covers.openlibrary.org/b/id/240726-S.jpg")).isTrue();
     }
+
+    @Test
+    public void coversApiTest() {
+        assertThat(BooksApi.getCovers().contentType().toString().equals("image/jpeg")).isTrue();
+    }
 }
 
 

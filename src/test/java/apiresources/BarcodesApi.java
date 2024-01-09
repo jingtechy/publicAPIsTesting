@@ -7,12 +7,12 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class BarcodesApi {
     public static BarcodeLookup getBarcodeLookup() {
-        String endpoint = "https://world.openfoodfacts.org/api/v0/product/737628064502.json";
+        String barcodeLookupEndpoint = "https://world.openfoodfacts.org/api/v0/product/737628064502.json";
 
         BarcodeLookup barcodeLookup = given()
                 .header("Content-Type", "application/json")
                 .when()
-                .get(endpoint)
+                .get(barcodeLookupEndpoint)
                 .then()
                 .statusCode(equalTo(200))
                 .extract()

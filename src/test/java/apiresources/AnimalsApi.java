@@ -11,12 +11,12 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class AnimalsApi {
     public static List<CatFacts.CatFact> getCatFacts() {
-        String endpoint = "https://cat-fact.herokuapp.com/facts/";
+        String catFactsEndpoint = "https://cat-fact.herokuapp.com/facts/";
 
         Response response = given()
                 .header("Content-Type", "application/json")
                 .when()
-                .get(endpoint)
+                .get(catFactsEndpoint)
                 .then()
                 .statusCode(equalTo(200))
                 .extract()
@@ -29,12 +29,12 @@ public class AnimalsApi {
     }
 
     public static DogBreeds getDogBreeds() {
-        String endpoint = "https://dog.ceo/api/breeds/list/all";
+        String dogBreedsEndpoint = "https://dog.ceo/api/breeds/list/all";
 
         DogBreeds dogBreeds = given()
                 .header("Content-Type", "application/json")
                 .when()
-                .get(endpoint)
+                .get(dogBreedsEndpoint)
                 .then()
                 .statusCode(equalTo(200))
                 .extract()
