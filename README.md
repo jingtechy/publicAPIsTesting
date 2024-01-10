@@ -12,6 +12,7 @@
 ### 3. Books APIs
 - **Book** `https://openlibrary.org/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json`
 - **Covers** `http://covers.openlibrary.org/b/isbn/0385472579-S.jpg`
+- **Search** `http://openlibrary.org/search.json?q=the+lord+of+the+rings`
 
 
 ## Setup Instructions

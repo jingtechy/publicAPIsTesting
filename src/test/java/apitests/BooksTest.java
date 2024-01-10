@@ -2,6 +2,7 @@ package apitests;
 
 import apiresources.BooksApi;
 import models.books.Book;
+import models.books.Search;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,6 +29,17 @@ public class BooksTest {
     @Test
     public void coversApiTest() {
         assertThat(BooksApi.getCovers().contentType().toString().equals("image/jpeg")).isTrue();
+    }
+
+    @Test
+    public void searchApiTest() {
+
+        Search search = BooksApi.getSearch();
+
+        assertThat(search.getNumFound() == 834).isTrue();
+        assertThat(search.isNumFoundExact()).isTrue();
+        assertThat(search.getOffset()).isNull();
+        assertThat(search.getDocs().get(0).getTitle().equals("The Lord of the Rings")).isTrue();
     }
 }
 

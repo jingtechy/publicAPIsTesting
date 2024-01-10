@@ -2,6 +2,7 @@ package apiresources;
 
 import io.restassured.response.Response;
 import models.books.Book;
+import models.books.Search;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -37,5 +38,21 @@ public class BooksApi {
                 .response();
 
         return response;
+    }
+
+    public static Search getSearch() {
+        String searchEndpoint = "http://openlibrary.org/search.json?q=the+lord+of+the+rings";
+
+        Search search  = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(searchEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .body()
+                .as(Search.class);
+
+        return search;
     }
 }
