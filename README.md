@@ -14,6 +14,9 @@
 - **Covers** `http://covers.openlibrary.org/b/isbn/0385472579-S.jpg`
 - **Search** `http://openlibrary.org/search.json?q=the+lord+of+the+rings`
 
+### 4. Cars APIs
+- **Makes Of Cars** `https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json`
+
 
 ## Setup Instructions
 1. Clone the repository: `git clone [repository_url]`
