@@ -18,7 +18,7 @@ public class BarcodesTest {
         List<String> expectedKeywords = Arrays.asList("asia","beverage","cereal","food","gluten","include",
                 "kit","kitchen","no","noodle","pasta","peanut","plant-based","potatoe","product","rice",
                 "seasoning","simply","stir-fry","thai","thailand","their","vegan","vegetarian");
-        List<String> expectedAllergensTags = Arrays.asList("en:peanuts");
+        List<String> expectedAllergensTags = List.of("en:peanuts");
 
         assertThat(barcodeLookup.getCode().equals("0737628064502")).isTrue();
         assertThat(barcodeLookup.getProduct().getId().equals("0737628064502")).isTrue();

@@ -91,6 +91,4 @@ public class AnimalsTest {
         assertThat(dogBreeds.getMessage().get("wolfhound").contains("irish")).isTrue();
         assertThat(dogBreeds.getStatus().equalsIgnoreCase("success")).isTrue();
     }
-
-
 }
