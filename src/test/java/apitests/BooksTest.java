@@ -28,7 +28,7 @@ public class BooksTest {
 
     @Test
     public void coversApiTest() {
-        assertThat(BooksApi.getCovers().contentType().toString().equals("image/jpeg")).isTrue();
+        assertThat(BooksApi.getCovers().contentType().equals("image/jpeg")).isTrue();
     }
 
     @Test

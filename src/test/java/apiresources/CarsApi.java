@@ -1,5 +1,6 @@
 package apiresources;
 
+import models.cars.CarManufacturers;
 import models.cars.MakesOfCars;
 
 import static io.restassured.RestAssured.given;
@@ -20,5 +21,20 @@ public class CarsApi {
                 .as(MakesOfCars.class);
 
         return makesOfCars;
+    }
+
+    public static CarManufacturers getCarManufacturers() {
+
+        String carManufacturersEndpoint = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json";
+        CarManufacturers carManufacturers = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(carManufacturersEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .as(CarManufacturers.class);
+
+        return carManufacturers;
     }
 }
