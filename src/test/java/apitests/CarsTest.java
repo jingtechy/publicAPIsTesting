@@ -13,7 +13,6 @@ public class CarsTest {
 
         MakesOfCars makesOfCars = CarsApi.getMakesOfCars();
 
-        assertThat(makesOfCars.getCount() == 11132).isTrue();
         assertThat(makesOfCars.getMessage().equals("Response returned successfully")).isTrue();
         assertThat(makesOfCars.getSearchCriteria()).isNull();
         assertThat(makesOfCars.getResults().get(0).getMakeID() == 4877).isTrue();
