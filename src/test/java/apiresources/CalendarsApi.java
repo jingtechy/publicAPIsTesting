@@ -1,16 +1,16 @@
 package apiresources;
 
-import models.calendars.CalendarForToday;
+import models.calendars.Calendar;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class CalendarsApi {
 
-    public static CalendarForToday getCalendarForToday() {
+    public static Calendar getCalendarForToday() {
         String calendarForTodayEndpoint = "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/today";
 
-        CalendarForToday calendarForToday = given()
+        Calendar calendar = given()
                 .header("Content-Type", "application/json")
                 .when()
                 .get(calendarForTodayEndpoint)
@@ -18,8 +18,24 @@ public class CalendarsApi {
                 .statusCode(equalTo(200))
                 .extract()
                 .body()
-                .as(CalendarForToday.class);
+                .as(Calendar.class);
 
-        return  calendarForToday;
+        return calendar;
+    }
+
+    public static Calendar getCalendarForTomorrow() {
+        String calendarForTomorrowEndpoint = "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/tomorrow";
+
+        Calendar calendar = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(calendarForTomorrowEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .body()
+                .as(Calendar.class);
+
+        return calendar;
     }
 }
