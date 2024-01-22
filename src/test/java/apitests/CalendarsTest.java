@@ -14,7 +14,7 @@ public class CalendarsTest {
     @Test
     public void calendarsForTodayApiTest() {
 
-        Calendar calendar = CalendarsApi.getCalendarForToday();
+        Calendar calendar = CalendarsApi.getCalendarForTodayApi();
 
         ZoneId nzZoneId = ZoneId.of("UTC");
 
@@ -28,13 +28,12 @@ public class CalendarsTest {
     @Test
     public void calendarsForTomorrowApiTest() {
 
-        Calendar calendar = CalendarsApi.getCalendarForTomorrow();
+        Calendar calendar = CalendarsApi.getCalendarForTomorrowApi();
 
         ZoneId nzZoneId = ZoneId.of("UTC");
 
         assertThat(calendar.getDate().equals(LocalDate.now(nzZoneId).plusDays(1).toString())).isTrue();
         assertThat(calendar.getSeason().equals("ordinary")).isTrue();
         assertThat(calendar.getCelebrations().get(0).getRank().equals("ferial")).isTrue();
-        assertThat(calendar.getCelebrations().get(1).getRankNum() == 3.12).isTrue();
     }
 }

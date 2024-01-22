@@ -11,7 +11,7 @@ public class BooksTest {
     @Test
     public void bookApiTest() {
 
-        Book book = BooksApi.getBook();
+        Book book = BooksApi.getBookApi();
 
         assertThat(book.getIsbnBook().getBibKey().equals("ISBN:0201558025")).isTrue();
         assertThat(book.getIsbnBook().getInfoUrl().equals("https://openlibrary.org/books/OL1429049M/Concrete_mathematics")).isTrue();
@@ -28,13 +28,13 @@ public class BooksTest {
 
     @Test
     public void coversApiTest() {
-        assertThat(BooksApi.getCovers().contentType().equals("image/jpeg")).isTrue();
+        assertThat(BooksApi.getCoversApi().contentType().equals("image/jpeg")).isTrue();
     }
 
     @Test
     public void searchApiTest() {
 
-        Search search = BooksApi.getSearch();
+        Search search = BooksApi.getSearchApi();
 
         assertThat(search.getNumFound() == 834).isTrue();
         assertThat(search.isNumFoundExact()).isTrue();

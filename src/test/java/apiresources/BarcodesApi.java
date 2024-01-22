@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class BarcodesApi {
-    public static BarcodeLookup getBarcodeLookup() {
+    public static BarcodeLookup getBarcodeLookupApi() {
         String barcodeLookupEndpoint = "https://world.openfoodfacts.org/api/v0/product/737628064502.json";
 
         BarcodeLookup barcodeLookup = given()

@@ -11,7 +11,7 @@ public class CarsTest {
     @Test
     public void makesOfCarsTest() {
 
-        MakesOfCars makesOfCars = CarsApi.getMakesOfCars();
+        MakesOfCars makesOfCars = CarsApi.getMakesOfCarsApi();
 
         assertThat(makesOfCars.getMessage().equals("Response returned successfully")).isTrue();
         assertThat(makesOfCars.getSearchCriteria()).isNull();
@@ -24,7 +24,7 @@ public class CarsTest {
     @Test
     public void carManufacturersTest() {
 
-        CarManufacturers carManufacturers = CarsApi.getCarManufacturers();
+        CarManufacturers carManufacturers = CarsApi.getCarManufacturersApi();
 
 //        assertThat(carManufacturers.getCount() == 87).isTrue();
         assertThat(carManufacturers.getResults().get(0).getMfrID() == 955).isTrue();

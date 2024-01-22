@@ -8,7 +8,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class CarsApi {
 
-    public static MakesOfCars getMakesOfCars() {
+    public static MakesOfCars getMakesOfCarsApi() {
 
         String makesOfCarsEndpoint = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json";
         MakesOfCars makesOfCars = given()
@@ -23,7 +23,7 @@ public class CarsApi {
         return makesOfCars;
     }
 
-    public static CarManufacturers getCarManufacturers() {
+    public static CarManufacturers getCarManufacturersApi() {
 
         String carManufacturersEndpoint = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json";
         CarManufacturers carManufacturers = given()

@@ -14,7 +14,7 @@ public class BarcodesTest {
     @Test
     public void barcodeLookupApiTest() {
 
-        BarcodeLookup barcodeLookup = BarcodesApi.getBarcodeLookup();
+        BarcodeLookup barcodeLookup = BarcodesApi.getBarcodeLookupApi();
         List<String> expectedKeywords = Arrays.asList("asia","beverage","cereal","food","gluten","include",
                 "kit","kitchen","no","noodle","pasta","peanut","plant-based","potatoe","product","rice",
                 "seasoning","simply","stir-fry","thai","thailand","their","vegan","vegetarian");
