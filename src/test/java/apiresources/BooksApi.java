@@ -9,7 +9,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class BooksApi {
 
-    public static Book getBook() {
+    public static Book getBookApi() {
         String bookEndpoint = "https://openlibrary.org/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json";
 
         Book book = given()
@@ -25,7 +25,7 @@ public class BooksApi {
         return book;
     }
 
-    public static Response getCovers() {
+    public static Response getCoversApi() {
         String coversEndpoint = "http://covers.openlibrary.org/b/isbn/0385472579-S.jpg";
 
         Response response  = given()
@@ -40,7 +40,7 @@ public class BooksApi {
         return response;
     }
 
-    public static Search getSearch() {
+    public static Search getSearchApi() {
         String searchEndpoint = "http://openlibrary.org/search.json?q=the+lord+of+the+rings";
 
         Search search  = given()

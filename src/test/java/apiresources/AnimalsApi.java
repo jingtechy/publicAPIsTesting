@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class AnimalsApi {
-    public static List<CatFacts.CatFact> getCatFacts() {
+    public static List<CatFacts.CatFact> getCatFactsApi() {
         String catFactsEndpoint = "https://cat-fact.herokuapp.com/facts/";
 
         Response response = given()
@@ -28,7 +28,7 @@ public class AnimalsApi {
         return catFacts;
     }
 
-    public static DogBreeds getDogBreeds() {
+    public static DogBreeds getDogBreedsApi() {
         String dogBreedsEndpoint = "https://dog.ceo/api/breeds/list/all";
 
         DogBreeds dogBreeds = given()

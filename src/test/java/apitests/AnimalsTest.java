@@ -14,7 +14,7 @@ public class AnimalsTest {
     @Test
     public void catFactsApiTest() {
 
-        List<CatFacts.CatFact> catFactList = AnimalsApi.getCatFacts();
+        List<CatFacts.CatFact> catFactList = AnimalsApi.getCatFactsApi();
 
         boolean anyCatFactWithVerified = catFactList.stream().anyMatch(catFact -> catFact.getStatus().isVerified());
         boolean anyCatFactWithExpectedSentCount = catFactList.stream().anyMatch(catFact -> catFact.getStatus().getSentCount() == 1);
@@ -44,7 +44,7 @@ public class AnimalsTest {
     @Test
     public void dogBreedsApiTest() {
 
-        DogBreeds dogBreeds = AnimalsApi.getDogBreeds();
+        DogBreeds dogBreeds = AnimalsApi.getDogBreedsApi();
 
         List<String> expectedBullDog = Arrays.asList("boston","english","french");
         List<String> expectedHound = Arrays.asList("afghan","basset","blood","english","ibizan","plott","walker");

@@ -7,7 +7,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class CalendarsApi {
 
-    public static Calendar getCalendarForToday() {
+    public static Calendar getCalendarForTodayApi() {
         String calendarForTodayEndpoint = "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/today";
 
         Calendar calendar = given()
@@ -23,7 +23,7 @@ public class CalendarsApi {
         return calendar;
     }
 
-    public static Calendar getCalendarForTomorrow() {
+    public static Calendar getCalendarForTomorrowApi() {
         String calendarForTomorrowEndpoint = "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/tomorrow";
 
         Calendar calendar = given()
