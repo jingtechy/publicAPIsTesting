@@ -17,6 +17,11 @@
 ### 4. Cars APIs
 - **Makes Of Cars** `https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json`
 
+### 5. Calendars APIs
+- **Calendar For Today** `http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/today`
+- **Calendar For Tomorrow** `http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/tomorrow`
+- **Calendar For Yesterday** `http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/yesterday`
+
 
 ## Setup Instructions
 1. Clone the repository: `git clone [repository_url]`
