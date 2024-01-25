@@ -38,4 +38,20 @@ public class CalendarsApi {
 
         return calendar;
     }
+
+    public static Calendar getCalendarForYesterdayApi() {
+        String calendarForYesterdayEndpoint = "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/yesterday";
+
+        Calendar calendar = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(calendarForYesterdayEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .body()
+                .as(Calendar.class);
+
+        return calendar;
+    }
 }

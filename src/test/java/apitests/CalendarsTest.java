@@ -12,13 +12,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CalendarsTest {
 
     @Test
-    public void calendarsForTodayApiTest() {
+    public void calendarForTodayApiTest() {
 
         Calendar calendar = CalendarsApi.getCalendarForTodayApi();
 
-        ZoneId nzZoneId = ZoneId.of("UTC");
+        ZoneId utcZone = ZoneId.of("UTC");
 
-        assertThat(calendar.getDate().equals(LocalDate.now(nzZoneId).toString())).isTrue();
+        assertThat(calendar.getDate().equals(LocalDate.now(utcZone).toString())).isTrue();
         assertThat(calendar.getSeason().equals("ordinary")).isTrue();
 //        assertThat(calendar.getSeasonWeek() == 2).isTrue();
         assertThat(calendar.getCelebrations().get(0).getRank().equals("ferial")).isTrue();
@@ -26,14 +26,26 @@ public class CalendarsTest {
     }
 
     @Test
-    public void calendarsForTomorrowApiTest() {
+    public void calendarForTomorrowApiTest() {
 
         Calendar calendar = CalendarsApi.getCalendarForTomorrowApi();
 
-        ZoneId nzZoneId = ZoneId.of("UTC");
+        ZoneId utcZone = ZoneId.of("UTC");
 
-        assertThat(calendar.getDate().equals(LocalDate.now(nzZoneId).plusDays(1).toString())).isTrue();
+        assertThat(calendar.getDate().equals(LocalDate.now(utcZone).plusDays(1).toString())).isTrue();
         assertThat(calendar.getSeason().equals("ordinary")).isTrue();
         assertThat(calendar.getCelebrations().get(0).getRank().equals("ferial")).isTrue();
+    }
+
+    @Test
+    public void calendarForYesterdayApiTest() {
+
+        Calendar calendar = CalendarsApi.getCalendarForYesterdayApi();
+
+        ZoneId utcZone = ZoneId.of("UTC");
+
+        assertThat(calendar.getDate().equals(LocalDate.now(utcZone).plusDays(-1).toString())).isTrue();
+        assertThat(calendar.getSeason().equals("ordinary")).isTrue();
+        assertThat(calendar.getCelebrations().get(0).getColour().equals("green")).isTrue();
     }
 }
