@@ -2,6 +2,7 @@ package apitests;
 
 import apiresources.CalendarsApi;
 import models.calendars.Calendar;
+import models.calendars.JewishCalendar;
 import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
@@ -68,5 +69,15 @@ public class CalendarsTest {
         assertThat(calendar.getDate().equals(LocalDate.now(utcZone).plusDays(-1).toString())).isTrue();
         assertThat(calendar.getSeason().equals("ordinary")).isTrue();
 //        assertThat(calendar.getCelebrations().get(0).getColour().equals("green")).isTrue();
+    }
+
+    @Test
+    public void jewishCalendarApiTest() {
+
+        JewishCalendar jewishCalendar = CalendarsApi.getJewishCalendarApi();
+
+        assertThat(jewishCalendar.getTitle().equals("Hebcal São Paulo 2024")).isTrue();
+        assertThat(jewishCalendar.getLocation().getCity().equals("São Paulo")).isTrue();
+        assertThat(jewishCalendar.getItems().get(0).getMemo().equals("Parashat Shemot")).isTrue();
     }
 }

@@ -1,6 +1,7 @@
 package apiresources;
 
 import models.calendars.Calendar;
+import models.calendars.JewishCalendar;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -53,5 +54,21 @@ public class CalendarsApi {
                 .as(Calendar.class);
 
         return calendar;
+    }
+
+    public static JewishCalendar getJewishCalendarApi() {
+        String jewishCalendarEndpoint = "https://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&year=now&month=x&ss=on&mf=on&c=on&geo=geoname&geonameid=3448439&m=50&s=on";
+
+        JewishCalendar jewishCalendar = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(jewishCalendarEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .body()
+                .as(JewishCalendar.class);
+
+        return jewishCalendar;
     }
 }
