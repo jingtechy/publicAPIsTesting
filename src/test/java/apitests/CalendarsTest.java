@@ -13,18 +13,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CalendarsTest {
 
+    public ZoneId utcZone = ZoneId.of("UTC");
+
+    // Get the current date in the UTC zone
+    public LocalDate currentDate = LocalDate.now(utcZone);
+    public int dayOfMonth;
+
+    public DayOfWeek dayOfWeek;
+
     @Test
     public void calendarForTodayApiTest() {
 
         Calendar calendar = CalendarsApi.getCalendarForTodayApi();
 
-        ZoneId utcZone = ZoneId.of("UTC");
-
-        // Get the current date in the UTC zone
-        LocalDate currentDate = LocalDate.now(utcZone);
-
         // Get the day of the month and day of the week
-        int dayOfMonth = currentDate.getDayOfMonth();
+        dayOfMonth = currentDate.getDayOfMonth();
+
         DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
 
         // Calculate the week of the month
@@ -52,19 +56,20 @@ public class CalendarsTest {
 
         Calendar calendar = CalendarsApi.getCalendarForTomorrowApi();
 
-        ZoneId utcZone = ZoneId.of("UTC");
+        // Get the day of the month and day of the week
+        dayOfMonth = currentDate.plusDays(1).getDayOfMonth();
 
-        assertThat(calendar.getDate().equals(LocalDate.now(utcZone).plusDays(1).toString())).isTrue();
+        DayOfWeek dayOfWeek = currentDate.plusDays(1).getDayOfWeek();
+
+        assertThat(calendar.getDate().equals(currentDate.plusDays(1).toString())).isTrue();
         assertThat(calendar.getSeason().equals("ordinary")).isTrue();
-        assertThat(calendar.getCelebrations().get(0).getRank().equals("ferial")).isTrue();
+        assertThat(calendar.getWeekday().equalsIgnoreCase(dayOfWeek.toString())).isTrue();
     }
 
     @Test
     public void calendarForYesterdayApiTest() {
 
         Calendar calendar = CalendarsApi.getCalendarForYesterdayApi();
-
-        ZoneId utcZone = ZoneId.of("UTC");
 
         assertThat(calendar.getDate().equals(LocalDate.now(utcZone).plusDays(-1).toString())).isTrue();
         assertThat(calendar.getSeason().equals("ordinary")).isTrue();
