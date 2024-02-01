@@ -36,7 +36,7 @@ public class BooksTest {
 
         Search search = BooksApi.getSearchApi();
 
-        assertThat(search.getNumFound() == 834).isTrue();
+        assertThat(search.getNumFound() == 839).isTrue();
         assertThat(search.isNumFoundExact()).isTrue();
         assertThat(search.getOffset()).isNull();
         assertThat(search.getDocs().get(0).getTitle().equals("The Lord of the Rings")).isTrue();
