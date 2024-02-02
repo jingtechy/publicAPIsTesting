@@ -71,4 +71,20 @@ public class CalendarsApi {
 
         return jewishCalendar;
     }
+
+    public static JewishCalendar getShabbatTimesApi() {
+        String shabbatTimesEndpoint = "https://www.hebcal.com/shabbat/?cfg=json&geonameid=3448439&m=50";
+
+        JewishCalendar jewishCalendar = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(shabbatTimesEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .body()
+                .as(JewishCalendar.class);
+
+        return  jewishCalendar;
+    }
 }

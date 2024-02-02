@@ -85,4 +85,13 @@ public class CalendarsTest {
         assertThat(jewishCalendar.getLocation().getCity().equals("São Paulo")).isTrue();
         assertThat(jewishCalendar.getItems().get(0).getMemo().equals("Parashat Shemot")).isTrue();
     }
+
+    @Test
+    public void shabbatTimesApiTest() {
+
+        JewishCalendar jewishCalendar = CalendarsApi.getShabbatTimesApi();
+
+        assertThat(jewishCalendar.getTitle().equals("Hebcal São Paulo February 2024")).isTrue();
+        assertThat(jewishCalendar.getItems().get(1).getCategory().equals("parashat")).isTrue();
+    }
 }
