@@ -22,7 +22,10 @@
 - **Calendar For Tomorrow** `http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/tomorrow`
 - **Calendar For Yesterday** `http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/yesterday`
 - **JewishCalendar** `https://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&year=now&month=x&ss=on&mf=on&c=on&geo=geoname&geonameid=3448439&m=50&s=on`
-- **ShabbatTimes** `https://www.hebcal.com/shabbat/?cfg=json&geonameid=3448439&m=50`                                                                                      
+- **ShabbatTimes** `https://www.hebcal.com/shabbat/?cfg=json&geonameid=3448439&m=50`  
+
+### 6. Comics APIs
+- **XKCD Comic** `https://xkcd.com/info.0.json`
 
 
 ## Setup Instructions
