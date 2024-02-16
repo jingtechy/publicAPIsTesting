@@ -21,4 +21,19 @@ public class CryptocurrencyApi {
 
         return currentBitcoinPrice;
     }
+
+    public static CurrentBitcoinPrice getSimpleTickerApi() {
+
+        String simpleTickerEndpoint = "https://api.cryptonator.com/api/ticker/btc-usd";
+        CurrentBitcoinPrice currentBitcoinPrice = given()
+                .header("Content-Type", "application/json")
+                .when()
+                .get(simpleTickerEndpoint)
+                .then()
+                .statusCode(equalTo(200))
+                .extract()
+                .as(CurrentBitcoinPrice.class);
+
+        return currentBitcoinPrice;
+    }
 }
